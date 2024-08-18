@@ -595,17 +595,21 @@ html{
 .contacto .col img{
     width: 100%;
 }
-.contacto .col .info{
-    position: absolute;
-    top: 40%;
-    background-color: #252A2E;
-    padding: 20px;
-    max-swidth: 350px;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.contacto .contenido-seccion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
-.contacto .col .info ul{
+
+.contacto .col {
+    max-width: 1080px; /* Ajusta este valor según lo necesites */
+    margin: 0 auto;
+}
+
+.contacto ul {
     list-style: none;
+    padding: 0;
 }
 .contacto .col .info ul li{
     margin-bottom: 20px;
