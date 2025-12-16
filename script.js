@@ -39,3 +39,63 @@ function efectoHabilidades(){
 window.onscroll = function(){
     efectoHabilidades();
 } 
+const projectCards = document.querySelectorAll('.project-card');
+
+projectCards.forEach(card => {
+  card.addEventListener('click', () => {
+    card.classList.toggle('active');
+  });
+});
+const form = document.querySelector('form');
+
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const email = form.querySelector('input[type="email"]').value;
+
+  if (email === '') {
+    alert('Por favor completá el email');
+  } else {
+    alert('Formulario enviado correctamente');
+    form.reset();
+  }
+});
+const cards = document.querySelectorAll('.project-card');
+
+cards.forEach(card => {
+  card.addEventListener('click', () => {
+    card.classList.toggle('active');
+  });
+});
+const projectCards = document.querySelectorAll('.project-card');
+
+projectCards.forEach(card => {
+  card.addEventListener('click', () => {
+    card.classList.toggle('active');
+  });
+});
+const skillsSection = document.querySelector('#skills');
+const progressBars = document.querySelectorAll('.barra-skill .progreso');
+
+let skillsAnimated = false;
+
+window.addEventListener('scroll', () => {
+  const sectionTop = skillsSection.getBoundingClientRect().top;
+  const screenHeight = window.innerHeight;
+
+  if (sectionTop < screenHeight && !skillsAnimated) {
+    progressBars.forEach(bar => {
+      if (bar.classList.contains('basico')) {
+        bar.style.width = '35%';
+      }
+      if (bar.classList.contains('intermedio')) {
+        bar.style.width = '65%';
+      }
+      if (bar.classList.contains('avanzado')) {
+        bar.style.width = '90%';
+      }
+    });
+
+    skillsAnimated = true;
+  }
+});

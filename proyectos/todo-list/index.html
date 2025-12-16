@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Tareas</title>
+  <link rel="stylesheet" href="style.css">
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+
+</head>
+<body>
+
+  <div class="app">
+    <h1>Lista de Tareas</h1>
+
+    <div class="input-container">
+      <input type="text" id="taskInput" placeholder="Escribí una tarea...">
+      <button id="addTaskBtn">Agregar</button>
+</div>
+<div class="actions">
+     <button id="clearCompleted">Limpiar completadas</button>
+     <button id="clearPending">Limpiar no realizadas</button>
+</div>
+
+
+    <ul id="taskList"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
