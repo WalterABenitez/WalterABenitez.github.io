@@ -1,103 +1,116 @@
-// 1️⃣ DOM
+// ===============================
+// ELEMENTOS DEL DOM
+// ===============================
 const taskInput = document.getElementById("taskInput");
 const addTaskBtn = document.getElementById("addTaskBtn");
 const taskList = document.getElementById("taskList");
+const counter = document.getElementById("counter");
 const clearCompletedBtn = document.getElementById("clearCompleted");
 const clearPendingBtn = document.getElementById("clearPending");
 
-// 2️⃣ Estado (datos)
-let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+// ===============================
+// DICCIONARIO DE ICONOS
+// ===============================
+const iconMap = {
+  comer: "fa-utensils",
+  leer: "fa-book",
+  estudiar: "fa-graduation-cap",
+  trabajar: "fa-briefcase",
+  cocinar: "fa-kitchen-set",
+  entrenar: "fa-dumbbell",
+  gym: "fa-dumbbell",
+  dormir: "fa-bed",
+  comprar: "fa-cart-shopping",
+  limpiar: "fa-broom",
+  programar: "fa-code",
+};
 
-// 3️⃣ Guardar en localStorage
-function saveTasks() {
-  localStorage.setItem("tasks", JSON.stringify(tasks));
-}
+// ===============================
+// FUNCIONES
+// ===============================
 
-// 4️⃣ Iconos
-function getIcon(taskText) {
-  const text = taskText.toLowerCase();
+// Devuelve un icono según el texto
+function getIconForTask(text) {
+  const lowerText = text.toLowerCase();
 
-  if (text.includes("comer") || text.includes("cocinar")) return '<i class="fa-solid fa-utensils"></i>';
-  if (text.includes("dormir")) return '<i class="fa-solid fa-bed"></i>';
-  if (text.includes("estudiar")) return '<i class="fa-solid fa-book"></i>';
-  if (text.includes("trabajar")) return '<i class="fa-solid fa-laptop"></i>';
-  if (text.includes("comprar")) return '<i class="fa-solid fa-cart-shopping"></i>';
-
-  return '<i class="fa-solid fa-list-check"></i>';
-}
-
-// 5️⃣ Render
-function renderTasks() {
-  taskList.innerHTML = "";
-
-  tasks.forEach((task, index) => {
-    const li = document.createElement("li");
-
-    if (task.completed) {
-      li.classList.add("completed");
+  for (let key in iconMap) {
+    if (lowerText.includes(key)) {
+      return iconMap[key];
     }
-
-    li.innerHTML = `<span class="task-text">${getIcon(task.text)} ${task.text}</span>`;
-
-    const completeBtn = document.createElement("button");
-    completeBtn.textContent = "✔";
-
-    completeBtn.addEventListener("click", () => {
-      tasks[index].completed = !tasks[index].completed;
-      saveTasks();
-      renderTasks();
-    });
-
-    const deleteBtn = document.createElement("button");
-    deleteBtn.textContent = "X";
-    deleteBtn.style.background = "#e53935";
-
-    deleteBtn.addEventListener("click", () => {
-      tasks.splice(index, 1);
-      saveTasks();
-      renderTasks();
-    });
-
-    li.appendChild(completeBtn);
-    li.appendChild(deleteBtn);
-    taskList.appendChild(li);
-  });
-}
-
-// 6️⃣ Agregar tarea
-function addTask() {
-  const taskText = taskInput.value.trim();
-
-  if (taskText === "") {
-    alert("Escribí una tarea");
-    return;
   }
 
-  tasks.push({ text: taskText, completed: false });
-  saveTasks();
-  renderTasks();
-  taskInput.value = "";
+  return "fa-circle"; // icono por defecto
 }
 
-// 7️⃣ Eventos
-addTaskBtn.addEventListener("click", addTask);
-taskInput.addEventListener("keydown", (e) => {
-  if (e.key === "Enter") addTask();
+// Actualiza el contador
+function updateCounter() {
+  const completedTasks = document.querySelectorAll("li.completed");
+  counter.textContent = `Tareas completadas: ${completedTasks.length}`;
+}
+
+// Crea una tarea
+function createTask(text) {
+  const li = document.createElement("li");
+
+  // Texto + icono
+  const taskText = document.createElement("span");
+  taskText.className = "task-text";
+
+  const iconClass = getIconForTask(text);
+  taskText.innerHTML = `<i class="fa-solid ${iconClass}"></i> ${text}`;
+
+  // Botón completar
+  const completeBtn = document.createElement("button");
+  completeBtn.textContent = "✔";
+  completeBtn.className = "complete-btn";
+
+  completeBtn.addEventListener("click", () => {
+    li.classList.toggle("completed");
+    updateCounter();
+  });
+
+  // Botón eliminar
+  const deleteBtn = document.createElement("button");
+  deleteBtn.innerHTML = `<i class="fa-solid fa-trash"></i>`;
+
+  deleteBtn.addEventListener("click", () => {
+    li.remove();
+    updateCounter();
+  });
+
+  li.appendChild(taskText);
+  li.appendChild(completeBtn);
+  li.appendChild(deleteBtn);
+
+  taskList.appendChild(li);
+  updateCounter();
+}
+
+// ===============================
+// EVENTOS
+// ===============================
+addTaskBtn.addEventListener("click", () => {
+  const text = taskInput.value.trim();
+  if (text === "") return;
+
+  createTask(text);
+  taskInput.value = "";
 });
 
 clearCompletedBtn.addEventListener("click", () => {
-  tasks = tasks.filter(task => !task.completed);
-  saveTasks();
-  renderTasks();
+  document.querySelectorAll("li.completed").forEach(li => li.remove());
+  updateCounter();
 });
 
 clearPendingBtn.addEventListener("click", () => {
-  tasks = tasks.filter(task => task.completed);
-  saveTasks();
-  renderTasks();
+  document.querySelectorAll("li:not(.completed)").forEach(li => li.remove());
+  updateCounter();
 });
-
-// 8️⃣ Inicializar
-renderTasks();
-
-
+// ===============================
+// AGREGAR TAREA CON ENTER
+// ===============================
+taskInput.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    addTaskBtn.click();
+  }
+});
