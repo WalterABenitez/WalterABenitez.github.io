@@ -29,6 +29,14 @@ https://walterabenitez.github.io/proyectos/todo-list/
 👉 Código:  
 https://github.com/WalterABenitez/WalterABenitez.github.io/tree/main/proyectos/todo-list
 
+### Proyecto 2 – Formulario de Contacto
+Formulario frontend con validaciones de campos, feedback visual y diseño responsive.
+
+👉 Demo:  
+https://walterabenitez.github.io/proyectos/proyecto-2/frontend/index.html
+
+👉 Código:  
+https://github.com/WalterABenitez/WalterABenitez.github.io/tree/main/proyectos/proyecto-2
 ---
 
 ## 🎯 Objetivo del portfolio

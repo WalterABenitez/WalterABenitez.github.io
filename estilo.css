@@ -900,4 +900,26 @@ ullia:hover {
   right: 0;
   top: -22px;
 }
+/* Asegurar que la sección Proyectos tenga el mismo estilo */
+#projects.contenido-seccion h2 {
+    font-size: 48px;
+    font-family: 'Righteous';
+    text-align: center;
+    padding: 20px 0;
+    color: var(--titulo-seccion);
+    margin-bottom: 40px;
+}
 
+/* =========================
+   SECCIÓN PROYECTOS
+========================= */
+
+#projects h2 {
+    font-size: 48px;
+    font-family: 'Righteous';
+    text-transform: uppercase;
+    text-align: center;
+    padding: 20px 0;
+    margin-bottom: 40px;
+    color: #ece0db !important;
+}
