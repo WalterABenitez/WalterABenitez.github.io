@@ -21,16 +21,17 @@ function efectoHabilidades(){
     var distancia_skills = window.innerHeight - skills.getBoundingClientRect().top;
     if(distancia_skills >= 300){
         let habilidades = document.getElementsByClassName("progreso");
-        habilidades[0].classList.add("javascript");
-        habilidades[1].classList.add("htmlcss");
-        habilidades[2].classList.add("photoshop");
-        habilidades[3].classList.add("wordpress");
-        habilidades[4].classList.add("drupal");
-        habilidades[5].classList.add("comunicacion");
-        habilidades[6].classList.add("trabajo");
-        habilidades[7].classList.add("creatividad");
-        habilidades[8].classList.add("dedicacion");
-        habilidades[9].classList.add("proyect");
+        habilidades[0].classList.add("HTML");
+        habilidades[1].classList.add("css");
+        habilidades[2].classList.add("javascript");
+        habilidades[3].classList.add("React");
+        habilidades[4].classList.add("SQL");
+        habilidades[5].classList.add("Canva");
+        habilidades[6].classList.add("Comunicación");
+        habilidades[7].classList.add("Trabajo en equipo");
+        habilidades[8].classList.add("Dedicación");
+        habilidades[9].classList.add("Creatividad");
+        habilidades[10].classList.add("Proyect Management");
     }
 }
 
@@ -39,34 +40,6 @@ function efectoHabilidades(){
 window.onscroll = function(){
     efectoHabilidades();
 } 
-const projectCards = document.querySelectorAll('.project-card');
-
-projectCards.forEach(card => {
-  card.addEventListener('click', () => {
-    card.classList.toggle('active');
-  });
-});
-const form = document.querySelector('form');
-
-form.addEventListener('submit', function (e) {
-  e.preventDefault();
-
-  const email = form.querySelector('input[type="email"]').value;
-
-  if (email === '') {
-    alert('Por favor completá el email');
-  } else {
-    alert('Formulario enviado correctamente');
-    form.reset();
-  }
-});
-const cards = document.querySelectorAll('.project-card');
-
-cards.forEach(card => {
-  card.addEventListener('click', () => {
-    card.classList.toggle('active');
-  });
-});
 const projectCards = document.querySelectorAll('.project-card');
 
 projectCards.forEach(card => {
