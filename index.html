@@ -1,484 +1,607 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <meta name="description" content="Portfolio de Walter Benitez, analista de sistemas y desarrollador web. Proyectos de desarrollo frontend y soluciones digitales.">
-    <link rel="stylesheet" href="estilo.css">
-    <link rel="icon" type="image/png" href="assets/icons/walter-icon.png">
-    <meta name="google-site-verification" content="7Ecglra-fqhUr8Nem5dWiA6LOUY_khN40NJXRmtbD-8" />
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>Walter Benitez — Analista de Sistemas & Desarrollador Web</title>
+  <meta name="description" content="Portfolio de Walter Benitez, Analista de Sistemas graduado. Desarrollador web fullstack especializado en React, Node.js, Docker y AWS. Pergamino, Buenos Aires, Argentina." />
+  <meta name="keywords" content="Walter Benitez, analista de sistemas, desarrollador web, React, Node.js, Docker, AWS, Pergamino, Argentina" />
+  <meta name="author" content="Walter Benitez" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://walterabenitez.github.io/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://walterabenitez.github.io/" />
+  <meta property="og:title" content="Walter Benitez — Analista de Sistemas & Desarrollador Web" />
+  <meta property="og:description" content="Portfolio de Walter Benitez. Proyectos fullstack con React, Node.js, Docker y AWS. Basado en Pergamino, Argentina." />
+  <meta property="og:image" content="https://walterabenitez.github.io/img/hero.jpg" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Walter Benitez — Analista de Sistemas" />
+  <meta name="twitter:description" content="Portfolio de Walter Benitez. Proyectos fullstack con React, Node.js, Docker y AWS." />
+
+  <!-- Google Site Verification -->
+  <meta name="google-site-verification" content="7Ecglra-fqhUr8Nem5dWiA6LOUY_khN40NJXRmtbD-8" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/icons/walter-icon.png" />
+
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <!-- MENU ENCABEZADO -->
-    <div class="contenedor-header">
-        <header>
-            <div class="logo">
-                <a href="#">Walter</a>
-            </div>
-            <nav id="nav">
-                <ul>
-                    <li><a href="#inicio" onclick="seleccionar()">INICIO</a></li>
-                    <li><a href="#sobremi" onclick="seleccionar()">SOBRE MI</a></li>
-                    <li><a href="#skills" onclick="seleccionar()">SKILLS</a></li>
-                    <li><a href="#projects" onclick="seleccionar()">PROYECTOS</a></li>
-                    <li><a href="#curriculum" onclick="seleccionar()">CURRICULUM</a></li>
-                    <li><a href="#portfolio" onclick="seleccionar()">INTERESES</a></li>
-                    <li><a href="#contacto" onclick="seleccionar()">CONTACTO</a></li>
-                </ul>
-            </nav>
-            <div class="nav-responsive" onclick="mostrarOcultarMenu()">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-        </header>
-    </div>
 
-    <!-- SECCION INICIO -->
-    <section id="inicio" class="inicio">
-        <div class="contenido-banner">
-            <div class="contenedor-img">
-                <img src="img/hero.jpg" alt="Imagen principal">
-            </div>
-            <h1>Walter Benitez</h1>
-            <h3>Analista de Sistemas</h3>
-            <div class="redes">
-                <a href="https://github.com/WalterABenitez" target="_blank">
-                    <i class="fa-brands fa-github"></i>
-                </a>
-                <a href="https://www.instagram.com/blackwall85/?locale=us&hl=am-et" target="_blank">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/walter-alejandro-benitez-84749420b/" target="_blank">
-                    <i class="fa-brands fa-linkedin-in"></i>
-                </a>
-            </div>
-        </div>
-    </section>
+  <!-- ═══════════════════════════ CURSOR ═══════════════════════════ -->
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-trail" id="cursor-trail" aria-hidden="true"></div>
 
-    <!-- SECCION SOBRE MI -->
-    <section id="sobremi" class="sobremi">
-        <div class="contenido-seccion">
-            <h2>Sobre Mí</h2>
-            <p><span>Hola, soy Walter Benitez.</span> Analista de Sistemas graduado. Me apasiona la tecnología y la resolución de problemas mediante soluciones prácticas y eficientes.
-Durante mi formación académica desarrollé conocimientos en programación, bases de datos y herramientas tecnológicas, fortaleciendo habilidades analíticas y de trabajo en equipo. Actualmente busco integrarme a un entorno profesional donde pueda aplicar mis conocimientos, continuar aprendiendo y crecer dentro del ámbito IT, aportando compromiso, responsabilidad y una mejora constante.</p>
-
-            <div class="fila">
-                <!-- datos personales -->
-                <div class="col">
-                    <h3>Datos Personales</h3>
-                    <ul>
-                        <li>
-                            <strong>Cumpleaños</strong>
-                            17-12-1985
-                        </li>
-                        <li>
-                            <strong>Teléfono</strong>
-                            Disponible a solicitud
-                        </li>
-                        <li>
-                            <strong>Email</strong>
-                            walteralejandrob85@gmail.com
-                        </li>
-                        <li>
-                            <strong>Website</strong>
-                            https://walterabenitez.github.io/
-                        </li>
-                        <li>
-                            <strong>Dirección</strong>
-                            Pergamino, Buenos Aires, Argentina
-                        </li>
-                        <li>
-                            <strong>Cargo</strong>
-                            <span>FREELANCE</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- intereses -->
-                <div class="col">
-                    <h3>Intereses</h3>
-                    <div class="contenedor-intereses">
-                        <div class="interes">
-                            <i class="fa-solid fa-headphones"></i>
-                            <span>MUSICA</span>
-                        </div>
-                        <div class="interes">
-                            <i class="fa-solid fa-plane"></i>
-                            <span>VIAJAR</span>
-                        </div>
-                        <div class="interes">
-                            <i class="fa-solid fa-swimmer"></i>
-                            <span>NATACIÓN</span>
-                        </div>
-                        <div class="interes">
-                            <i class="fa-solid fa-tv"></i>
-                            <span>SERIES</span>
-                        </div>
-                        <div class="interes">
-                            <i class="fa-solid fa-car"></i>
-                            <span>AUTOS</span>
-                        </div>
-                        <div class="interes">
-                            <i class="fa-solid fa-camera"></i>
-                            <span>FOTOS</span>
-                        </div>
-                        
-                    </div>
-                </div>
-            <div>
-                <a href="docs/C-V-WalterBenitez.pdf" download>
-                    <button class="btn-download">
-                        Descargar CV <i class="fa-solid fa-download"></i>
-                        <span class="overlay"></span>
-                    </button>
-                </a>
-            </div>
-            </div>
-    </section>
-
-<!-- SECCION SKILLS -->
-<section class="skills" id="skills">
-  <div class="contenido-seccion">
-    <h2>Skills</h2>
-
-    <div class="fila">
-      <!-- Technical Skills -->
-      <div class="col">
-        <h3>Technical Skills</h3>
-
-        <div class="skill">
-          <span>HTML</span>
-          <div class="barra-skill">
-            <div class="progreso intermedio">
-              <span></span>
-            </div>
-          </div>
-        </div>
-
-        <div class="skill">
-          <span>CSS</span>
-          <div class="barra-skill">
-            <div class="progreso intermedio">
-              <span></span>
-            </div>
-          </div>
-        </div>
-
-        <div class="skill">
-          <span>JavaScript</span>
-          <div class="barra-skill">
-            <div class="progreso basico">
-              <span></span>
-            </div>
-          </div>
-        </div>
-
-        <div class="skill">
-          <span>React</span>
-          <div class="barra-skill">
-            <div class="progreso basico">
-              <span></span>
-            </div>
-          </div>
-        </div>
-
-        <div class="skill">
-          <span>SQL</span>
-          <div class="barra-skill">
-            <div class="progreso intermedio">
-              <span></span>
-            </div>
-          </div>
-        </div>
-
-        <div class="skill">
-          <span>Canva</span>
-          <div class="barra-skill">
-            <div class="progreso intermedio">
-              <span></span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Professional Skills -->
-      <div class="col">
-        <h3>Professional Skills</h3>
-
-        <div class="skill">
-          <span>Comunicación</span>
-          <div class="barra-skill">
-            <div class="progreso intermedio">
-              <span></span>
-            </div>
-          </div>
-        </div>
-
-        <div class="skill">
-          <span>Trabajo en equipo</span>
-          <div class="barra-skill">
-            <div class="progreso intermedio">
-              <span></span>
-            </div>
-          </div>
-        </div>
-
-        <div class="skill">
-          <span>Dedicación</span>
-          <div class="barra-skill">
-            <div class="progreso avanzado">
-              <span></span>
-            </div>
-          </div>
-        </div>
-
-        <div class="skill">
-          <span>Creatividad</span>
-          <div class="barra-skill">
-            <div class="progreso intermedio">
-              <span></span>
-            </div>
-          </div>
-        </div>
-
-        <div class="skill">
-          <span>Project Management</span>
-          <div class="barra-skill">
-            <div class="progreso intermedio">
-              <span></span>
-            </div>
-          </div>
-        </div>
-
+  <!-- ═══════════════════════════ NAVBAR ═══════════════════════════ -->
+  <header class="navbar" id="navbar" role="banner">
+    <div class="nav-inner">
+      <a href="#inicio" class="nav-logo" aria-label="Inicio">WB<span class="dot">.</span></a>
+      <nav class="nav-links" id="nav-links" role="navigation" aria-label="Navegación principal">
+        <a href="#inicio">Inicio</a>
+        <a href="#sobre">Sobre mí</a>
+        <a href="#skills">Skills</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#curriculum">CV</a>
+        <a href="#intereses">Intereses</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema claro/oscuro" title="Cambiar tema">
+          <i class="fa-solid fa-sun" id="theme-icon"></i>
+        </button>
+        <button class="nav-burger" id="nav-burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
-  </div>
-</section>
+  </header>
 
-<section id="projects" class="projects">
-  <div class="contenido-seccion">
-    <h2>Proyectos</h2>
+  <main>
 
-    <div class="projects-container">
+    <!-- ═══════════════════════════ HERO ═══════════════════════════ -->
+    <section id="inicio" class="hero" aria-label="Presentación">
+      <div class="hero-bg-grid" aria-hidden="true"></div>
+      <div class="hero-glow" aria-hidden="true"></div>
 
-      <!-- 🔥 GymWall PRIMERO -->
-      <div class="project-card destacado">
-        <div class="icon">💪</div>
-        <h3>GymWall</h3>
-        <p>
-          Sistema de gestión para gimnasios con control de acceso por DNI,
-          gestión de membresías y registro de asistencias.
-        </p>
+      <div class="hero-inner">
+        <div class="hero-text">
+          <div class="hero-tag" aria-hidden="true">
+            <span class="tag-dot"></span>
+            Disponible para proyectos
+          </div>
+          <h1 class="hero-name">
+            Walter<br/>
+            <span class="hero-name-accent">Benitez</span>
+          </h1>
+          <div class="hero-role">
+            <span class="role-static">Analista de Sistemas &amp; </span>
+            <span class="typewriter" id="typewriter" aria-live="polite"></span>
+            <span class="typewriter-cursor" aria-hidden="true">|</span>
+          </div>
+          <p class="hero-sub">
+            Construyo soluciones digitales con arquitecturas modernas.<br/>
+            Pergamino, Buenos Aires — Argentina.
+          </p>
+          <div class="hero-cta">
+            <a href="#proyectos" class="btn btn-primary">Ver proyectos <i class="fa-solid fa-arrow-down"></i></a>
+            <a href="docs/C-V-WalterBenitez.pdf" download class="btn btn-ghost">Descargar CV <i class="fa-solid fa-download"></i></a>
+          </div>
+          <div class="hero-social" aria-label="Redes sociales">
+            <a href="https://github.com/WalterABenitez" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/walter-alejandro-benitez-84749420b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/blackwall85/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
 
-        <p class="tech">
-          React • Node.js • Express • PostgreSQL • Docker
-        </p>
-
-        <div class="project-links">
-          <a href="https://softwaregymwall.vercel.app" target="_blank">Ver demo</a>
-          <a href="https://github.com/WalterABenitez/gymwall" target="_blank">Ver código</a>
+        <div class="hero-portrait-wrap">
+          <div class="hero-portrait-ring" aria-hidden="true"></div>
+          <div class="hero-portrait-ring ring-2" aria-hidden="true"></div>
+          <img
+            src="img/foto-perfil.jpg"
+            alt="Foto de perfil de Walter Benitez"
+            class="hero-portrait"
+            onerror="this.src='img/hero.jpg'"
+          />
+          <div class="hero-portrait-badge" aria-label="Freelance">
+            <i class="fa-solid fa-code"></i>
+            <span>Freelance</span>
+          </div>
         </div>
       </div>
 
-      <div class="project-card">
-        <div class="icon">📝</div>
-        <h3>Lista de tareas</h3>
-        <p>
-          Aplicación simple para agregar y eliminar tareas usando JavaScript.
-        </p>
-        <div class="project-links">
-          <a href="https://walterabenitez.github.io/proyectos/todo-list/" target="_blank">Ver demo</a>
-          <a href="https://github.com/WalterABenitez/WalterABenitez.github.io" target="_blank">Ver código</a>
+      <div class="scroll-hint" aria-hidden="true">
+        <div class="scroll-line"></div>
+        <span>scroll</span>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════ SOBRE MÍ ═══════════════════════════ -->
+    <section id="sobre" class="section sobre" aria-labelledby="sobre-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">01 — Sobre mí</span>
+          <h2 id="sobre-title" class="section-title">Quién soy</h2>
+        </div>
+
+        <div class="sobre-grid">
+          <div class="sobre-text reveal">
+            <p class="sobre-intro">
+              <strong>Hola, soy Walter Benitez.</strong> Analista de Sistemas graduado. Me apasiona la tecnología y la resolución de problemas mediante soluciones prácticas y eficientes.
+            </p>
+            <p>
+              Durante mi formación académica desarrollé conocimientos en programación, bases de datos y herramientas tecnológicas, fortaleciendo habilidades analíticas y de trabajo en equipo. Actualmente busco integrarme a un entorno profesional donde pueda aplicar mis conocimientos, continuar aprendiendo y crecer dentro del ámbito IT, aportando compromiso, responsabilidad y una mejora constante.
+            </p>
+            <a href="docs/C-V-WalterBenitez.pdf" download class="btn btn-primary mt-1">
+              Descargar CV <i class="fa-solid fa-download"></i>
+            </a>
+          </div>
+
+          <div class="sobre-cards reveal">
+            <div class="info-card">
+              <h3>Datos Personales</h3>
+              <ul class="data-list">
+                <li><i class="fa-solid fa-cake-candles" aria-hidden="true"></i><span><strong>Cumpleaños</strong> 17-12-1985</span></li>
+                <li><i class="fa-solid fa-phone" aria-hidden="true"></i><span><strong>Teléfono</strong> Disponible a solicitud</span></li>
+                <li><i class="fa-solid fa-envelope" aria-hidden="true"></i><span><strong>Email</strong> walteralejandrob85@gmail.com</span></li>
+                <li><i class="fa-solid fa-globe" aria-hidden="true"></i><span><strong>Web</strong> walterabenitez.github.io</span></li>
+                <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span><strong>Dirección</strong> Pergamino, Buenos Aires, Argentina</span></li>
+                <li><i class="fa-solid fa-briefcase" aria-hidden="true"></i><span><strong>Cargo</strong> <em>FREELANCE</em></span></li>
+              </ul>
+            </div>
+
+            <div class="info-card">
+              <h3>Intereses</h3>
+              <div class="interests-grid">
+                <div class="interest-item"><i class="fa-solid fa-headphones"></i><span>Música</span></div>
+                <div class="interest-item"><i class="fa-solid fa-plane"></i><span>Viajar</span></div>
+                <div class="interest-item"><i class="fa-solid fa-person-swimming"></i><span>Natación</span></div>
+                <div class="interest-item"><i class="fa-solid fa-tv"></i><span>Series</span></div>
+                <div class="interest-item"><i class="fa-solid fa-car"></i><span>Autos</span></div>
+                <div class="interest-item"><i class="fa-solid fa-camera"></i><span>Fotos</span></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="project-card">
-        <div class="icon">📩</div>
-        <h3>Formulario de Contacto</h3>
-        <p>
-          Formulario frontend con validaciones y feedback visual al usuario.
-        </p>
-        <div class="project-links">
-          <a href="proyectos/proyecto-2/frontend/index.html" target="_blank">Ver demo</a>
-          <a href="https://github.com/WalterABenitez/WalterABenitez.github.io/tree/main/proyectos/proyecto-2" target="_blank">Ver código</a>
+    <!-- ═══════════════════════════ SKILLS ═══════════════════════════ -->
+    <section id="skills" class="section skills" aria-labelledby="skills-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">02 — Habilidades</span>
+          <h2 id="skills-title" class="section-title">Skills</h2>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skills-col reveal">
+            <h3 class="skills-col-title">Technical Skills</h3>
+            <div class="skill-list">
+              <div class="skill-item" data-pct="75">
+                <div class="skill-info"><span>HTML</span><span class="skill-pct">75%</span></div>
+                <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+              </div>
+              <div class="skill-item" data-pct="70">
+                <div class="skill-info"><span>CSS</span><span class="skill-pct">70%</span></div>
+                <div class="skill-bar"><div class="skill-fill" data-width="70"></div></div>
+              </div>
+              <div class="skill-item" data-pct="60">
+                <div class="skill-info"><span>JavaScript</span><span class="skill-pct">60%</span></div>
+                <div class="skill-bar"><div class="skill-fill" data-width="60"></div></div>
+              </div>
+              <div class="skill-item" data-pct="55">
+                <div class="skill-info"><span>React</span><span class="skill-pct">55%</span></div>
+                <div class="skill-bar"><div class="skill-fill" data-width="55"></div></div>
+              </div>
+              <div class="skill-item" data-pct="65">
+                <div class="skill-info"><span>SQL</span><span class="skill-pct">65%</span></div>
+                <div class="skill-bar"><div class="skill-fill" data-width="65"></div></div>
+              </div>
+              <div class="skill-item" data-pct="70">
+                <div class="skill-info"><span>Canva</span><span class="skill-pct">70%</span></div>
+                <div class="skill-bar"><div class="skill-fill" data-width="70"></div></div>
+              </div>
+              <div class="skill-item" data-pct="60">
+                <div class="skill-info"><span>Docker</span><span class="skill-pct">60%</span></div>
+                <div class="skill-bar"><div class="skill-fill" data-width="60"></div></div>
+              </div>
+              <div class="skill-item" data-pct="55">
+                <div class="skill-info"><span>AWS</span><span class="skill-pct">55%</span></div>
+                <div class="skill-bar"><div class="skill-fill" data-width="55"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skills-col reveal">
+            <h3 class="skills-col-title">Professional Skills</h3>
+            <div class="skill-list">
+              <div class="skill-item" data-pct="80">
+                <div class="skill-info"><span>Comunicación</span><span class="skill-pct">80%</span></div>
+                <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+              </div>
+              <div class="skill-item" data-pct="85">
+                <div class="skill-info"><span>Trabajo en equipo</span><span class="skill-pct">85%</span></div>
+                <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+              </div>
+              <div class="skill-item" data-pct="90">
+                <div class="skill-info"><span>Dedicación</span><span class="skill-pct">90%</span></div>
+                <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+              </div>
+              <div class="skill-item" data-pct="75">
+                <div class="skill-info"><span>Creatividad</span><span class="skill-pct">75%</span></div>
+                <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+              </div>
+              <div class="skill-item" data-pct="70">
+                <div class="skill-info"><span>Project Management</span><span class="skill-pct">70%</span></div>
+                <div class="skill-bar"><div class="skill-fill" data-width="70"></div></div>
+              </div>
+            </div>
+
+            <div class="tech-tags-wrap">
+              <h3 class="skills-col-title mt-2">Stack &amp; Tecnologías</h3>
+              <div class="tech-tags">
+                <span>React</span><span>Node.js</span><span>Express</span>
+                <span>PostgreSQL</span><span>Docker</span><span>AWS Lightsail</span>
+                <span>Python</span><span>Java</span><span>MySQL</span>
+                <span>Git</span><span>Linux</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="project-card">
-        <div class="icon">🎂</div>
-        <h3>Tortas Sol</h3>
-        <p>
-          Sitio web para pastelería desarrollado en HTML, CSS y JavaScript.
-        </p>
-        <div class="project-links">
-          <a href="https://walterabenitez.github.io/tortas-sol/" target="_blank">Ver demo</a>
-          <a href="https://github.com/WalterABenitez/tortas-sol" target="_blank">Ver código</a>
+    <!-- ═══════════════════════════ PROYECTOS ═══════════════════════════ -->
+    <section id="proyectos" class="section proyectos" aria-labelledby="proyectos-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">03 — Trabajo</span>
+          <h2 id="proyectos-title" class="section-title">Proyectos</h2>
+        </div>
+
+        <!-- FEATURED PROJECT -->
+        <article class="project-featured reveal" aria-label="Proyecto destacado: E-Commerce en AWS Lightsail">
+          <div class="project-featured-content">
+            <div class="project-featured-text">
+              <div class="featured-badges">
+                <span class="badge badge-wip"><i class="fa-solid fa-circle-notch fa-spin"></i> En Desarrollo</span>
+                <span class="badge badge-pct">🚀 95% completado</span>
+              </div>
+              <h3 class="project-featured-title">E-Commerce en AWS Lightsail</h3>
+              <p class="project-featured-desc">
+                E-commerce completo actualmente en desarrollo y próximo a finalizar. Implementado con arquitectura moderna desplegada en AWS Lightsail usando Docker. Incluye catálogo de productos, carrito de compras, pasarela de pagos y panel de administración.
+              </p>
+              <div class="project-progress-wrap">
+                <div class="project-progress-label">
+                  <span>Progreso del proyecto</span>
+                  <span class="project-progress-num">95%</span>
+                </div>
+                <div class="project-progress-bar">
+                  <div class="project-progress-fill" style="width: 0%" data-target="95"></div>
+                </div>
+              </div>
+              <div class="project-tech-list">
+                <span>React</span><span>Node.js</span><span>Express</span>
+                <span>PostgreSQL</span><span>Docker</span><span>AWS Lightsail</span>
+              </div>
+              <div class="project-featured-links">
+                <button class="btn btn-coming-soon" disabled aria-label="Demo próximamente disponible">
+                  <i class="fa-solid fa-clock"></i> Demo Próximamente
+                </button>
+                <a href="https://github.com/WalterABenitez" target="_blank" rel="noopener noreferrer" class="btn btn-ghost-sm">
+                  <i class="fa-brands fa-github"></i> GitHub
+                </a>
+              </div>
+            </div>
+            <div class="project-featured-visual" aria-hidden="true">
+              <div class="featured-mockup">
+                <div class="mockup-bar"><span></span><span></span><span></span></div>
+                <div class="mockup-body">
+                  <div class="mockup-sidebar"></div>
+                  <div class="mockup-main">
+                    <div class="mockup-row tall"></div>
+                    <div class="mockup-row-group">
+                      <div class="mockup-card"></div>
+                      <div class="mockup-card"></div>
+                      <div class="mockup-card"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- OTHER PROJECTS GRID -->
+        <div class="projects-grid">
+
+          <article class="project-card reveal" aria-label="Proyecto: GymWall">
+            <div class="project-card-inner">
+              <div class="project-card-top">
+                <div class="project-icon"><i class="fa-solid fa-dumbbell"></i></div>
+                <div class="project-links-top">
+                  <a href="https://github.com/WalterABenitez" target="_blank" rel="noopener noreferrer" aria-label="Ver código en GitHub"><i class="fa-brands fa-github"></i></a>
+                </div>
+              </div>
+              <h3>GymWall</h3>
+              <p>Sistema de gestión para gimnasios con control de acceso por DNI, gestión de membresías y registro de asistencias.</p>
+              <div class="project-card-tech">
+                <span>React</span><span>Node.js</span><span>Express</span><span>PostgreSQL</span><span>Docker</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" aria-label="Proyecto: AccesoSeguro">
+            <div class="project-card-inner">
+              <div class="project-card-top">
+                <div class="project-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <div class="project-links-top">
+                  <a href="https://acceso-seguro.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="Ver demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                  <a href="https://github.com/WalterABenitez/acceso-seguro" target="_blank" rel="noopener noreferrer" aria-label="Ver código en GitHub"><i class="fa-brands fa-github"></i></a>
+                </div>
+              </div>
+              <h3>AccesoSeguro</h3>
+              <p>Sistema de autenticación fullstack con registro de usuarios, login con JWT y contraseñas encriptadas con bcrypt.</p>
+              <div class="project-card-tech">
+                <span>React</span><span>Node.js</span><span>Express</span><span>PostgreSQL</span><span>Docker</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" aria-label="Proyecto: Tortas Sol">
+            <div class="project-card-inner">
+              <div class="project-card-top">
+                <div class="project-icon"><i class="fa-solid fa-cake-candles"></i></div>
+                <div class="project-links-top">
+                  <a href="https://walterabenitez.github.io/tortas-sol/" target="_blank" rel="noopener noreferrer" aria-label="Ver demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                  <a href="https://github.com/WalterABenitez/tortas-sol" target="_blank" rel="noopener noreferrer" aria-label="Ver código en GitHub"><i class="fa-brands fa-github"></i></a>
+                </div>
+              </div>
+              <h3>Tortas Sol</h3>
+              <p>Sitio web para pastelería desarrollado en HTML, CSS y JavaScript con diseño atractivo y responsive.</p>
+              <div class="project-card-tech">
+                <span>HTML</span><span>CSS</span><span>JavaScript</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" aria-label="Proyecto: Lista de Tareas">
+            <div class="project-card-inner">
+              <div class="project-card-top">
+                <div class="project-icon"><i class="fa-solid fa-list-check"></i></div>
+                <div class="project-links-top">
+                  <a href="https://walterabenitez.github.io/proyectos/todo-list/" target="_blank" rel="noopener noreferrer" aria-label="Ver demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                  <a href="https://github.com/WalterABenitez/WalterABenitez.github.io" target="_blank" rel="noopener noreferrer" aria-label="Ver código en GitHub"><i class="fa-brands fa-github"></i></a>
+                </div>
+              </div>
+              <h3>Lista de Tareas</h3>
+              <p>Aplicación simple para agregar y eliminar tareas usando JavaScript puro. Interfaz limpia y funcional.</p>
+              <div class="project-card-tech">
+                <span>HTML</span><span>CSS</span><span>JavaScript</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" aria-label="Proyecto: Formulario de Contacto">
+            <div class="project-card-inner">
+              <div class="project-card-top">
+                <div class="project-icon"><i class="fa-solid fa-paper-plane"></i></div>
+                <div class="project-links-top">
+                  <a href="proyectos/proyecto-2/frontend/index.html" target="_blank" rel="noopener noreferrer" aria-label="Ver demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                  <a href="https://github.com/WalterABenitez/WalterABenitez.github.io/tree/main/proyectos/proyecto-2" target="_blank" rel="noopener noreferrer" aria-label="Ver código en GitHub"><i class="fa-brands fa-github"></i></a>
+                </div>
+              </div>
+              <h3>Formulario de Contacto</h3>
+              <p>Formulario frontend con validaciones en tiempo real y feedback visual al usuario.</p>
+              <div class="project-card-tech">
+                <span>HTML</span><span>CSS</span><span>JavaScript</span>
+              </div>
+            </div>
+          </article>
+
         </div>
       </div>
+    </section>
 
-      <div class="project-card">
-        <div class="icon">🔐</div>
-        <h3>AccesoSeguro</h3>
-        <p>
-          Sistema de autenticación fullstack con React, Node.js, Express, PostgreSQL y Docker.
-        </p>
-        <div class="project-links">
-          <a href="https://acceso-seguro.vercel.app" target="_blank">Ver demo</a>
-          <a href="https://github.com/WalterABenitez/acceso-seguro" target="_blank">Ver código</a>
+    <!-- ═══════════════════════════ CURRICULUM ═══════════════════════════ -->
+    <section id="curriculum" class="section curriculum" aria-labelledby="cv-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">04 — Trayectoria</span>
+          <h2 id="cv-title" class="section-title">Curriculum</h2>
+        </div>
+
+        <div class="cv-grid">
+          <!-- Educación -->
+          <div class="cv-col reveal">
+            <h3 class="cv-col-title"><i class="fa-solid fa-graduation-cap"></i> Educación</h3>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <span class="timeline-date">2019 — 2026</span>
+                  <h4>Analista de Sistemas</h4>
+                  <span class="timeline-org">Universidad Nacional Noroeste — Buenos Aires (UNNOBA)</span>
+                  <p>Formación orientada al desarrollo de soluciones tecnológicas, abarcando programación, bases de datos y análisis de sistemas, con énfasis en la resolución de problemas, el aprendizaje continuo y el trabajo en equipo.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Experiencia -->
+          <div class="cv-col reveal">
+            <h3 class="cv-col-title"><i class="fa-solid fa-briefcase"></i> Experiencia</h3>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <span class="timeline-date">2010 — 2013</span>
+                  <h4>Operario de Producción</h4>
+                  <span class="timeline-org">Liliana S.R.L</span>
+                  <p>En Liliana S.R.L., trabajé en la línea de producción de electrodomésticos, donde adquirí experiencia en el armado de productos. Mi rol me permitió desarrollar habilidades en trabajo en equipo y resolución de problemas en un entorno de producción altamente dinámico.</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <span class="timeline-date">En formación</span>
+                  <h4>Habilidades Técnicas Adquiridas</h4>
+                  <span class="timeline-org">Autodidacta + UNNOBA</span>
+                  <ul class="cv-skill-list">
+                    <li>Python, Java, SQL, JavaScript</li>
+                    <li>React JS (en desarrollo)</li>
+                    <li>MySQL, PostgreSQL</li>
+                    <li>HTML, CSS, desarrollo web</li>
+                    <li>Docker, AWS Lightsail</li>
+                    <li>Redes y Seguridad Informática</li>
+                    <li>Trabajo en Equipo y Gestión de Proyectos</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+    </section>
 
+    <!-- ═══════════════════════════ INTERESES ═══════════════════════════ -->
+    <section id="intereses" class="section intereses" aria-labelledby="intereses-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">05 — Vida personal</span>
+          <h2 id="intereses-title" class="section-title">Intereses</h2>
+        </div>
+
+        <div class="gallery-grid reveal">
+          <figure class="gallery-item" tabindex="0">
+            <img src="img/p1.jpg" alt="Trekking en Fitz Roy, Patagonia" loading="lazy" />
+            <figcaption>
+              <strong>Trekking</strong>
+              <span>Fitz Roy</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item" tabindex="0">
+            <img src="img/p2.jpg" alt="Adrenalina en Pedra do Telégrafo, Río de Janeiro" loading="lazy" />
+            <figcaption>
+              <strong>Adrenalina</strong>
+              <span>Pedra do Telégrafo — RJ</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item" tabindex="0">
+            <img src="img/p3.jpg" alt="Sunset en Ipanema, Río de Janeiro" loading="lazy" />
+            <figcaption>
+              <strong>Sunset</strong>
+              <span>Ipanema — Río de Janeiro</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item" tabindex="0">
+            <img src="img/p4.jpg" alt="Vista diaria desde el hogar" loading="lazy" />
+            <figcaption>
+              <strong>Vista diaria</strong>
+              <span>Hogar</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item" tabindex="0">
+            <img src="img/p5.jpg" alt="Buenos valores, siempre presente" loading="lazy" />
+            <figcaption>
+              <strong>Buenos Valores</strong>
+              <span>Siempre presente</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item" tabindex="0">
+            <img src="img/p6.jpg" alt="Relax en la playa" loading="lazy" />
+            <figcaption>
+              <strong>Relax</strong>
+              <span>Beach</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════ CONTACTO ═══════════════════════════ -->
+    <section id="contacto" class="section contacto" aria-labelledby="contacto-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">06 — Contacto</span>
+          <h2 id="contacto-title" class="section-title">Hablemos</h2>
+        </div>
+
+        <div class="contacto-grid">
+          <div class="contacto-text reveal">
+            <p class="contacto-intro">
+              ¿Tenés un proyecto en mente o buscás sumar un desarrollador comprometido a tu equipo? <strong>Escribime.</strong>
+            </p>
+            <div class="contacto-info">
+              <div class="contacto-item">
+                <div class="contacto-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div>
+                  <strong>Ubicación</strong>
+                  <span>Pergamino, Buenos Aires, Argentina</span>
+                </div>
+              </div>
+              <div class="contacto-item">
+                <div class="contacto-icon"><i class="fa-solid fa-envelope"></i></div>
+                <div>
+                  <strong>Email</strong>
+                  <a href="mailto:walteralejandrob85@gmail.com">walteralejandrob85@gmail.com</a>
+                </div>
+              </div>
+              <div class="contacto-item">
+                <div class="contacto-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+                <div>
+                  <strong>Teléfono</strong>
+                  <span>Disponible a solicitud</span>
+                </div>
+              </div>
+            </div>
+            <div class="contacto-social">
+              <a href="https://github.com/WalterABenitez" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub">
+                <i class="fa-brands fa-github"></i> GitHub
+              </a>
+              <a href="https://www.linkedin.com/in/walter-alejandro-benitez-84749420b/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn">
+                <i class="fa-brands fa-linkedin-in"></i> LinkedIn
+              </a>
+              <a href="https://www.instagram.com/blackwall85/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i> Instagram
+              </a>
+            </div>
+          </div>
+
+          <div class="contacto-map reveal">
+            <img src="img/ubicacion.jpg" alt="Mapa de ubicación — Pergamino, Buenos Aires" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <p class="footer-copy">© 2025 Walter Benitez — Diseñado y desarrollado <i class="fa-solid fa-computer" aria-hidden="true"></i></p>
+      <a href="#inicio" class="footer-top" aria-label="Volver al inicio">
+        <i class="fa-solid fa-arrow-up"></i>
+      </a>
     </div>
-  </div>
-</section>
+  </footer>
 
-
-
-    <!-- SECCION CURRICULUM -->
-    <section id="curriculum" class="curriculum">
-        <div class="contenido-seccion">
-            <h2>Curriculum</h2>
-            <div class="fila">
-                <div class="col izquierda">
-                    <h3>Educación</h3>
-                    <div class="item izq">
-                        <h4>Analista de Sistemas</h4>
-                        <span class="casa">Universidad Nacional Noroeste - Buenos Aires (UNNOBA)</span>
-                        <span class="fecha">2019 - 2026</span>
-                        <p>Formación orientada al desarrollo de soluciones tecnológicas, abarcando programación, bases de datos y análisis de sistemas, con énfasis en la resolución de problemas, el aprendizaje continuo y el trabajo en equipo.</p>
-                        <div class="conectori">
-                            <div class="circuloi"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col derecha">
-                    <h3>Experiencia de trabajo</h3>
-                    <div class="item der">
-                        <h4>Operario de Producción.</h4>
-                        <span class="casa">Liliana S.R.L </span>
-                        <span class="fecha">2010 - 2013</span>
-                        <p>En Lilina S.R.L., trabajé en la línea de producción de electrodomésticos, donde adquirí experiencia en el armado de productos. Mi rol me permitió desarrollar habilidades en trabajo en equipo y resolución de problemas en un entorno de producción altamente dinámico.</p>
-                        <div class="conectord">
-                            <div class="circulod"></div>
-                        </div>
-                    </div>
-                    <div class="item abajo">
-                        <h4>Habilidades Técnicas</h4>
-                        <span class="casa">Adquiriendo habilidades en : </span>
-                        <ul>
-                            <li>Lenguajes de Programación: Python, Java, SQL, JavaScript</li>
-                            <li>Framework: React JS, (Conceptos básicos - en formación) </li>
-                            <li>Gestión de Bases de Datos: MySQL, PostgreSQL</li>
-                            <li>Desarrollo Web: HTML, CSS, JavaScript</li>
-                            <li>Conocimientos en Redes y Seguridad Informática</li>
-                            <li>Trabajo en Equipo y Gestión de Proyectos</li>
-                        </ul>
-                        <div class="conectord">
-                            <div class="circulod"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECCION INTERESES -->
-    <section id="portfolio" class="portfolio">
-        <div class="contenido-seccion">
-            <h2>INTERESES</h2>
-            <div class="galeria">
-                <div class="proyecto">
-                    <img src="img/p1.jpg" alt="">
-                    <div class="overlay">
-                        <h3>TreKking</h3>
-                        <p>Fitz Roy</p>
-                    </div>
-                </div>
-                <div class="proyecto">
-                    <img src="img/p2.jpg" alt="">
-                    <div class="overlay">
-                        <h3>Adrenalina</h3>
-                        <p>Pedra do Telégrafo RJ</p>
-                    </div>
-                </div>
-                <div class="proyecto">
-                    <img src="img/p3.jpg" alt="">
-                    <div class="overlay">
-                        <h3>Sunset</h3>
-                        <p>Ipanema Rio de Janeiro</p>
-                    </div>
-                </div>
-                <div class="proyecto">
-                    <img src="img/p4.jpg" alt="">
-                    <div class="overlay">
-                        <h3>Vista diara </h3>
-                        <p>Hogar</p>
-                    </div>
-                </div>
-                <div class="proyecto">
-                    <img src="img/p5.jpg" alt="">
-                    <div class="overlay">
-                        <h3>Buenos Valores</h3>
-                        <p>Siempre presente</p>
-                    </div>
-                </div>
-                <div class="proyecto">
-                    <img src="img/p6.jpg" alt="">
-                    <div class="overlay">
-                        <h3>Relax</h3>
-                        <p>Beach</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contacto" class="contacto">
-        <div class="contenido-seccion">
-            <!-- Mapa -->
-            <div class="col">
-                <img src="img/ubicacion.jpg" alt="Ubicación general">
-                <div class="info">
-                    <ul>
-                        <li>
-                            <i class="fa-solid fa-location-dot"></i>
-                            Pergamino, Buenos Aires, Argentina
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-mobile-screen"></i>
-                            Cel: Disponible a solicitud
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-envelope"></i>
-                            Email: walteralejandrob85@gmail.com
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-
-    <!-- footer -->
-    <footer>
-        <a href="#inicio" class="arriba">
-            <i class="fa-solid fa-angles-up"></i>
-        </a>
-        <div class="redes">
-            <a href="https://github.com/WalterABenitez" target="_blank">
-                <i class="fa-brands fa-github"></i>
-            </a>
-            <a href="https://www.instagram.com/blackwall85/?locale=us&hl=am-et" target="_blank">
-                <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/walter-alejandro-benitez-84749420b/" target="_blank">
-                <i class="fa-brands fa-linkedin-in"></i>
-            </a>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

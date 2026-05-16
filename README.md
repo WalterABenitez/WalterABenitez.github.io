@@ -1,63 +1,9 @@
-# WalterABenitez.github.io
-Mi-Portafolio
-# 🌐 Portfolio Web – Walter Benitez
-
-Este repositorio contiene mi **portfolio personal**, donde presento mis proyectos y prácticas relacionadas al desarrollo web frontend.
-
-El sitio está publicado usando **GitHub Pages**.
-
+# Walter Benitez — Portfolio
+ 
+Sitio web personal. Analista de Sistemas & Desarrollador Web.
+ 
+🌐 [walterabenitez.github.io](https://walterabenitez.github.io)
+ 
 ---
-
-## 🚀 Tecnologías utilizadas
-
-- HTML5
-- CSS3
-- JavaScript
-- Git & GitHub
-- GitHub Pages
-
----
-
-## 📁 Proyectos destacados
-
-### ✅ Lista de Tareas
-Aplicación web desarrollada con JavaScript que permite gestionar tareas diarias.
-
-👉 Demo:  
-https://walterabenitez.github.io/proyectos/todo-list/
-
-👉 Código:  
-https://github.com/WalterABenitez/WalterABenitez.github.io/tree/main/proyectos/todo-list
-
-### Proyecto 2 – Formulario de Contacto
-Formulario frontend con validaciones de campos, feedback visual y diseño responsive.
-
-👉 Demo:  
-https://walterabenitez.github.io/proyectos/proyecto-2/frontend/index.html
-
-👉 Código:  
-https://github.com/WalterABenitez/WalterABenitez.github.io/tree/main/proyectos/proyecto-2
----
-
-## 🎯 Objetivo del portfolio
-
-Este portfolio tiene como objetivo:
-
-- Mostrar mis habilidades en desarrollo frontend
-- Presentar proyectos funcionales
-- Practicar buenas prácticas de código y organización
-- Servir como presentación profesional para búsquedas laborales en IT
-
----
-
-## 👤 Sobre mí
-
-Soy estudiante de la carrera **Analista en Sistemas**, con interés en el desarrollo frontend y en la creación de interfaces claras, funcionales y responsive.
-
-Actualmente continúo aprendiendo y desarrollando proyectos prácticos.
-
----
-
-## 🌐 Sitio online
-
-👉 https://walterabenitez.github.io
+ 
+Desarrollado con HTML5, CSS3 y JavaScript vanilla. Sin frameworks ni dependencias.
