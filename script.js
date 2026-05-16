@@ -111,7 +111,7 @@ sections.forEach(s => sectionObserver.observe(s));
 
 /* ─── TYPEWRITER ─── */
 const typeEl = document.getElementById('typewriter');
-const roles = ['Desarrollador Web', 'Desarrollador Fullstack', 'Apasionado por Docker & AWS', 'Solucionador de Problemas'];
+const roles = ['Desarrollador Fullstack', 'Manejo de Docker & AWS', 'Aprendiz Continuo'];
 let roleIdx = 0, charIdx = 0, deleting = false;
 
 function typeWriter() {
