@@ -1,1 +1,9 @@
-"proyectos/" 
+# Proyectos locales con su propio repositorio (no forman parte del sitio)
+proyectos/
+
+# Archivos locales y de auditoría
+.env
+.env.*
+.claude/
+capturas/
+node_modules/

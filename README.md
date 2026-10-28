@@ -1,63 +1,39 @@
 # WalterABenitez.github.io
-Mi-Portafolio
-# 🌐 Portfolio Web – Walter Benitez
 
-Este repositorio contiene mi **portfolio personal**, donde presento mis proyectos y prácticas relacionadas al desarrollo web frontend.
+Portafolio personal de **Walter Benítez**, Analista de Sistemas y desarrollador de software.
 
-El sitio está publicado usando **GitHub Pages**.
+🌐 Sitio: https://walterabenitez.github.io
 
 ---
 
-## 🚀 Tecnologías utilizadas
+## Proyecto destacado: WallFood
 
-- HTML5
-- CSS3
-- JavaScript
-- Git & GitHub
-- GitHub Pages
+**WallFood** es un punto de venta (POS) y sistema de gestión SaaS para food trucks.
 
----
+- Ventas desde una interfaz táctil optimizada para tablets y celulares.
+- Gestión de productos, combos y stock.
+- Reportes de ventas.
+- Usuarios administradores y cajeros.
+- Modo offline: las ventas se guardan en el dispositivo y se sincronizan al volver la conexión.
 
-## 📁 Proyectos destacados
+**Stack:** React 19 · TypeScript · TanStack Start · Supabase · PostgreSQL · Row Level Security · Service Worker · IndexedDB · Docker
 
-### ✅ Lista de Tareas
-Aplicación web desarrollada con JavaScript que permite gestionar tareas diarias.
-
-👉 Demo:  
-https://walterabenitez.github.io/proyectos/todo-list/
-
-👉 Código:  
-https://github.com/WalterABenitez/WalterABenitez.github.io/tree/main/proyectos/todo-list
-
-### Proyecto 2 – Formulario de Contacto
-Formulario frontend con validaciones de campos, feedback visual y diseño responsive.
-
-👉 Demo:  
-https://walterabenitez.github.io/proyectos/proyecto-2/frontend/index.html
-
-👉 Código:  
-https://github.com/WalterABenitez/WalterABenitez.github.io/tree/main/proyectos/proyecto-2
----
-
-## 🎯 Objetivo del portfolio
-
-Este portfolio tiene como objetivo:
-
-- Mostrar mis habilidades en desarrollo frontend
-- Presentar proyectos funcionales
-- Practicar buenas prácticas de código y organización
-- Servir como presentación profesional para búsquedas laborales en IT
+👉 https://app.wallfood.com.ar/
 
 ---
 
-## 👤 Sobre mí
+## Sobre el sitio
 
-Soy  **Analista en Sistemas**, con interés en el desarrollo frontend y en la creación de interfaces claras, funcionales y responsive.
+Sitio estático sin paso de compilación, publicado con **GitHub Pages** desde la rama `main`.
 
-Actualmente continúo aprendiendo y desarrollando proyectos prácticos.
+- `index.html` — estructura y contenido.
+- `styles.css` — sistema de diseño (variables CSS), layout responsive y animaciones.
+- `script.js` — menú móvil, navegación activa, animaciones al hacer scroll (respeta `prefers-reduced-motion`).
+- `img/wallfood/` — capturas del sitio público de WallFood.
+- `docs/C-V-WalterBenitez.pdf` — currículum.
 
----
+Para verlo localmente alcanza con servir la carpeta, por ejemplo:
 
-## 🌐 Sitio online
-
-👉 https://walterabenitez.github.io
+```bash
+python -m http.server 8080
+```
