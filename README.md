@@ -16,9 +16,13 @@ Portafolio personal de **Walter Benítez**, Analista de Sistemas y desarrollador
 - Usuarios administradores y cajeros.
 - Modo offline: las ventas se guardan en el dispositivo y se sincronizan al volver la conexión.
 
-**Stack:** React 19 · TypeScript · TanStack Start · Supabase · PostgreSQL · Row Level Security · Service Worker · IndexedDB · Docker
+**Stack:** React 19 · TypeScript · TanStack Start · Tailwind CSS · Supabase · PostgreSQL · Row Level Security · Service Worker · IndexedDB · Docker · Linux
 
 👉 https://app.wallfood.com.ar/
+
+## En desarrollo: NewCarPanel
+
+SaaS para servicios automotores (talleres, lubricentros, concesionarias y flotas): gestión de vehículos, servicios e historial. Proyecto colaborativo con otro desarrollador, todavía sin demo pública.
 
 ---
 
@@ -28,7 +32,7 @@ Sitio estático sin paso de compilación, publicado con **GitHub Pages** desde l
 
 - `index.html` — estructura y contenido.
 - `styles.css` — sistema de diseño (variables CSS), layout responsive y animaciones.
-- `script.js` — menú móvil, navegación activa, animaciones al hacer scroll (respeta `prefers-reduced-motion`).
+- `script.js` — escena 3D del hero, menú móvil, navegación activa y animaciones al hacer scroll (respeta `prefers-reduced-motion`).
 - `img/wallfood/` — capturas del sitio público de WallFood.
 - `docs/C-V-WalterBenitez.pdf` — currículum.
 

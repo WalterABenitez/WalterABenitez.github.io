@@ -134,6 +134,53 @@ if ('IntersectionObserver' in window && !reduceMotion.matches) {
   revealEls.forEach(el => el.classList.add('is-in'));
 }
 
+/* ─── HERO 3D: inclinación con el cursor, deriva en táctiles, profundidad con scroll ─── */
+const hero = document.getElementById('inicio');
+const conn = navigator.connection;
+const lowPower = (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 2) || (conn && conn.saveData);
+
+if (hero && !reduceMotion.matches && !lowPower) {
+  const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
+  const target = { x: 0, y: 0 };
+  const current = { x: 0, y: 0 };
+  let heroVisible = true;
+  let rafId = null;
+  let lastSy = -1;
+
+  const frame = time => {
+    if (!finePointer.matches) {
+      // Sin cursor: deriva lenta para que la escena no quede plana
+      target.x = Math.sin(time / 2600) * 0.45;
+      target.y = Math.cos(time / 3400) * 0.3;
+    }
+    current.x += (target.x - current.x) * 0.07;
+    current.y += (target.y - current.y) * 0.07;
+    hero.style.setProperty('--px', current.x.toFixed(4));
+    hero.style.setProperty('--py', current.y.toFixed(4));
+
+    const sy = Math.min(1, Math.max(0, window.scrollY / hero.offsetHeight));
+    if (Math.abs(sy - lastSy) > 0.001) {
+      hero.style.setProperty('--sy', sy.toFixed(4));
+      lastSy = sy;
+    }
+    rafId = heroVisible ? requestAnimationFrame(frame) : null;
+  };
+
+  window.addEventListener('pointermove', e => {
+    if (!finePointer.matches) return;
+    target.x = (e.clientX / window.innerWidth) * 2 - 1;
+    target.y = (e.clientY / window.innerHeight) * 2 - 1;
+  }, { passive: true });
+
+  document.documentElement.addEventListener('pointerleave', () => { target.x = 0; target.y = 0; });
+
+  // Solo animar mientras el hero está en pantalla
+  new IntersectionObserver(([entry]) => {
+    heroVisible = entry.isIntersecting;
+    if (heroVisible && rafId === null) rafId = requestAnimationFrame(frame);
+  }).observe(hero);
+}
+
 /* ─── PARALLAX SUAVE DEL TELÉFONO EN EL CASO WALLFOOD ─── */
 const phone = document.querySelector('[data-parallax]');
 

@@ -6,26 +6,26 @@
   <script>document.documentElement.classList.add('js');</script>
 
   <!-- SEO -->
-  <title>Walter Benítez — Analista de Sistemas y desarrollador de software</title>
-  <meta name="description" content="Walter Benítez, Analista de Sistemas y desarrollador de software en Pergamino, Argentina. Creador de WallFood, un punto de venta SaaS para food trucks que funciona incluso sin internet." />
+  <title>Walter Benítez — Analista de Sistemas</title>
+  <meta name="description" content="Walter Benítez, Analista de Sistemas (UNNOBA). Creador de WallFood, un punto de venta SaaS para food trucks en producción, y co-desarrollador de NewCarPanel." />
   <meta name="author" content="Walter Benítez" />
   <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#0b0a09" />
+  <meta name="theme-color" content="#000000" />
   <link rel="canonical" href="https://walterabenitez.github.io/" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="es_AR" />
   <meta property="og:url" content="https://walterabenitez.github.io/" />
-  <meta property="og:title" content="Walter Benítez — Analista de Sistemas y desarrollador de software" />
-  <meta property="og:description" content="Construyo productos digitales que resuelven problemas reales. Proyecto destacado: WallFood, POS SaaS para food trucks con modo offline." />
+  <meta property="og:title" content="Walter Benítez — Analista de Sistemas" />
+  <meta property="og:description" content="Del problema real al producto en producción. WallFood, POS SaaS para food trucks con modo offline, y NewCarPanel, en desarrollo." />
   <meta property="og:image" content="https://walterabenitez.github.io/img/og-cover.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Walter Benítez — Analista de Sistemas y desarrollador de software" />
+  <meta name="twitter:title" content="Walter Benítez — Analista de Sistemas" />
   <meta name="twitter:description" content="Creador de WallFood, un POS SaaS para food trucks que sigue vendiendo sin internet." />
   <meta name="twitter:image" content="https://walterabenitez.github.io/img/og-cover.jpg" />
 
@@ -37,7 +37,7 @@
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Walter Benítez",
-    "jobTitle": "Analista de Sistemas y desarrollador de software",
+    "jobTitle": "Analista de Sistemas",
     "url": "https://walterabenitez.github.io/",
     "email": "mailto:walteralejandrob85@gmail.com",
     "address": { "@type": "PostalAddress", "addressLocality": "Pergamino", "addressRegion": "Buenos Aires", "addressCountry": "AR" },
@@ -88,19 +88,20 @@
       <nav class="site-nav" id="site-nav" aria-label="Navegación principal">
         <ul class="nav-list">
           <li><a href="#wallfood" class="nav-link"><span class="nav-num" aria-hidden="true">01</span>WallFood</a></li>
-          <li><a href="#sobre" class="nav-link"><span class="nav-num" aria-hidden="true">02</span>Sobre mí</a></li>
-          <li><a href="#stack" class="nav-link"><span class="nav-num" aria-hidden="true">03</span>Tecnologías</a></li>
-          <li><a href="#trayectoria" class="nav-link"><span class="nav-num" aria-hidden="true">04</span>Trayectoria</a></li>
-          <li><a href="#contacto" class="nav-link"><span class="nav-num" aria-hidden="true">05</span>Contacto</a></li>
+          <li><a href="#newcarpanel" class="nav-link"><span class="nav-num" aria-hidden="true">02</span>NewCarPanel</a></li>
+          <li><a href="#sobre" class="nav-link"><span class="nav-num" aria-hidden="true">03</span>Sobre mí</a></li>
+          <li><a href="#stack" class="nav-link"><span class="nav-num" aria-hidden="true">04</span>Tecnologías</a></li>
+          <li><a href="#recorrido" class="nav-link"><span class="nav-num" aria-hidden="true">05</span>Recorrido</a></li>
+          <li><a href="#contacto" class="nav-link"><span class="nav-num" aria-hidden="true">06</span>Contacto</a></li>
         </ul>
         <div class="nav-mobile-foot">
           <a href="mailto:walteralejandrob85@gmail.com">walteralejandrob85@gmail.com</a>
-          <a href="docs/C-V-WalterBenitez.pdf" download>Descargar CV</a>
+          <a href="docs/C-V-WalterBenitez.pdf?v=2026-10" download="Walter-Benitez-CV.pdf">Descargar CV (PDF)</a>
         </div>
       </nav>
 
       <div class="header-actions">
-        <a href="docs/C-V-WalterBenitez.pdf" class="header-cv" download>
+        <a href="docs/C-V-WalterBenitez.pdf?v=2026-10" class="header-cv" download="Walter-Benitez-CV.pdf">
           CV <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>
         </a>
         <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
@@ -115,53 +116,71 @@
 
     <!-- ═══════════════════════════ HERO ═══════════════════════════ -->
     <section id="inicio" class="hero" aria-labelledby="hero-title">
-      <div class="hero-glow" aria-hidden="true"></div>
 
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow hero-eyebrow load-in" style="--d: 0">
-            <span class="status-dot" aria-hidden="true"></span>
-            Walter Benítez · Analista de Sistemas
-          </p>
+      <!-- Escena en capas: perspectiva real que responde al cursor -->
+      <div class="hero-stage" id="hero-stage">
+        <div class="layer layer-light" aria-hidden="true"></div>
+        <div class="layer layer-floor" aria-hidden="true"><div class="floor-plane"></div></div>
+        <figure class="layer layer-portrait">
+          <img src="img/hero.jpg" width="928" height="1039" alt="Retrato de Walter Benítez" fetchpriority="high" />
+        </figure>
+        <div class="layer layer-rim" aria-hidden="true"></div>
+      </div>
 
-          <h1 id="hero-title" class="hero-title">
-            <span class="line"><span class="word" style="--i:1">Construyo</span> <span class="word" style="--i:2">productos</span></span>
-            <span class="line"><span class="word" style="--i:3">digitales</span> <span class="word" style="--i:4">para</span> <span class="word" style="--i:5">resolver</span></span>
-            <span class="line"><span class="word" style="--i:6">problemas</span> <span class="word word-accent" style="--i:7"><em>reales.</em></span></span>
-          </h1>
+      <div class="container hero-content">
+        <p class="eyebrow hero-eyebrow load-in" style="--d: 3">
+          <span class="status-dot" aria-hidden="true"></span>
+          Analista de Sistemas
+        </p>
 
-          <p class="hero-lead load-in" style="--d: 6">
-            Soy Analista de Sistemas y desarrollador de software. Diseño y construyo aplicaciones
-            de punta a punta: del análisis del problema y el modelo de datos a la interfaz que
-            usa la gente todos los días.
-          </p>
+        <h1 id="hero-title" class="hero-title">
+          <span class="hero-name load-in" style="--d: 4">Walter Benítez</span>
+          <span class="hero-claim">
+            <span class="line"><span class="word" style="--i:1">Del</span> <span class="word" style="--i:2">problema</span> <span class="word" style="--i:3">real</span></span>
+            <span class="line"><span class="word" style="--i:4">al</span> <span class="word" style="--i:5">producto</span></span>
+            <span class="line"><span class="word word-accent" style="--i:6">en</span> <span class="word word-accent" style="--i:7">producción.</span></span>
+          </span>
+        </h1>
 
-          <div class="hero-actions load-in" style="--d: 7">
-            <a href="#wallfood" class="btn btn-primary">
-              Ver el caso WallFood
-              <svg class="icon" aria-hidden="true"><use href="#i-arrow-down"/></svg>
-            </a>
-            <a href="#contacto" class="btn btn-ghost">Contactarme</a>
-          </div>
-        </div>
+        <p class="hero-lead load-in" style="--d: 8">
+          Analista de Sistemas egresado de la UNNOBA. Desarrollo y mantengo <strong>WallFood</strong>,
+          un punto de venta SaaS para food trucks, y construyo <strong>NewCarPanel</strong> junto a otro desarrollador.
+        </p>
 
-        <div class="hero-side">
-          <figure class="hero-portrait load-in" style="--d: 2">
-            <img src="img/hero.jpg" width="928" height="1039" alt="Retrato en blanco y negro de Walter Benítez" fetchpriority="high" />
-          </figure>
-
-          <a href="#wallfood" class="hero-feature load-in" style="--d: 8">
-            <span class="hero-feature-label">Proyecto destacado</span>
-            <span class="hero-feature-name">WallFood</span>
-            <span class="hero-feature-desc">POS y gestión para food trucks, con modo offline real.</span>
-            <svg class="icon hero-feature-arrow" aria-hidden="true"><use href="#i-arrow-down"/></svg>
+        <div class="hero-actions load-in" style="--d: 9">
+          <a href="#wallfood" class="btn btn-primary">
+            Conocer WallFood
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow-down"/></svg>
           </a>
+          <a href="docs/C-V-WalterBenitez.pdf?v=2026-10" class="btn btn-ghost" download="Walter-Benitez-CV.pdf">
+            Descargar CV
+            <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>
+          </a>
+          <a href="#contacto" class="hero-contact">Contacto</a>
         </div>
       </div>
 
-      <div class="container hero-meta load-in" style="--d: 9">
+      <!-- Anotaciones de la escena: llevan a los dos proyectos -->
+      <ul class="hero-tags" aria-label="Proyectos">
+        <li class="hero-tag hero-tag-main load-in" style="--d: 10">
+          <a href="#wallfood">
+            <span class="tag-dot tag-dot-live" aria-hidden="true"></span>
+            <span class="tag-text"><strong>WallFood</strong> POS SaaS · en producción</span>
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow-down"/></svg>
+          </a>
+        </li>
+        <li class="hero-tag hero-tag-dev load-in" style="--d: 11">
+          <a href="#newcarpanel">
+            <span class="tag-dot tag-dot-dev" aria-hidden="true"></span>
+            <span class="tag-text"><strong>NewCarPanel</strong> SaaS automotor · en desarrollo</span>
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow-down"/></svg>
+          </a>
+        </li>
+      </ul>
+
+      <div class="container hero-meta load-in" style="--d: 12">
         <p>Pergamino, Buenos Aires — Argentina</p>
-        <p>Abierto a nuevas oportunidades</p>
+        <p>Prioridad remoto · CABA, GBA y Rosario</p>
         <p class="hero-scroll" aria-hidden="true">Scroll <span class="hero-scroll-line"></span></p>
       </div>
     </section>
@@ -169,8 +188,8 @@
     <!-- ═══════════════════════════ MARQUEE ═══════════════════════════ -->
     <div class="marquee" aria-hidden="true">
       <div class="marquee-track">
-        <span>Análisis de sistemas</span><span>Offline-first</span><span>React 19</span><span>TypeScript</span><span>PostgreSQL</span><span>Supabase</span><span>Docker</span><span>Diseño de producto</span>
-        <span>Análisis de sistemas</span><span>Offline-first</span><span>React 19</span><span>TypeScript</span><span>PostgreSQL</span><span>Supabase</span><span>Docker</span><span>Diseño de producto</span>
+        <span>Análisis de sistemas</span><span>Offline-first</span><span>React 19</span><span>TypeScript</span><span>PostgreSQL</span><span>Supabase</span><span>Docker</span><span>Linux</span>
+        <span>Análisis de sistemas</span><span>Offline-first</span><span>React 19</span><span>TypeScript</span><span>PostgreSQL</span><span>Supabase</span><span>Docker</span><span>Linux</span>
       </div>
     </div>
 
@@ -178,22 +197,22 @@
     <section id="wallfood" class="case" aria-labelledby="wallfood-title">
       <div class="container">
         <header class="case-head">
-          <p class="eyebrow reveal"><span class="eyebrow-num">01</span> Proyecto destacado</p>
+          <p class="eyebrow reveal"><span class="eyebrow-num">01</span> Proyecto principal · Producto propio</p>
           <h2 id="wallfood-title" class="case-title reveal">WallFood</h2>
           <div class="case-intro">
             <p class="case-kicker reveal">Punto de venta y sistema de gestión para <em>food trucks</em>.</p>
             <p class="case-summary reveal">
-              Diseñé y desarrollé WallFood, una plataforma SaaS para emprendimientos gastronómicos
-              móviles. Permite vender desde una interfaz táctil, administrar productos, combos y stock,
-              y seguir operando cuando se corta internet: las ventas quedan guardadas en el dispositivo
-              y se sincronizan solas cuando vuelve la conexión.
+              Diseño, desarrollo y mantengo WallFood, un SaaS multi-cliente para emprendimientos
+              gastronómicos móviles, hoy en producción con un cliente real. Permite vender desde una
+              interfaz táctil, administrar productos, combos y stock, y seguir operando cuando se corta
+              internet: las ventas quedan guardadas en el dispositivo y se sincronizan al volver la conexión.
             </p>
           </div>
 
           <dl class="case-meta reveal">
-            <div><dt>Rol</dt><dd>Diseño y desarrollo integral</dd></div>
-            <div><dt>Producto</dt><dd>SaaS · Web app offline-first</dd></div>
-            <div><dt>Estado</dt><dd><span class="status-dot" aria-hidden="true"></span> En línea</dd></div>
+            <div><dt>Rol</dt><dd>Análisis, desarrollo y mantenimiento</dd></div>
+            <div><dt>Producto</dt><dd>SaaS multi-cliente · PWA offline</dd></div>
+            <div><dt>Estado</dt><dd><span class="status-dot" aria-hidden="true"></span> En producción · 2026</dd></div>
             <div>
               <dt>Sitio</dt>
               <dd>
@@ -262,13 +281,13 @@
             </li>
             <li class="feature reveal">
               <span class="feature-num" aria-hidden="true">03</span>
-              <h4 class="feature-title">Reportes de ventas</h4>
-              <p>Ventas diarias, semanales y mensuales para entender cómo rinde cada jornada.</p>
+              <h4 class="feature-title">Reportes y suscripciones</h4>
+              <p>Reportes de ventas diarios, semanales y mensuales, y gestión de suscripciones de cada food truck.</p>
             </li>
             <li class="feature reveal">
               <span class="feature-num" aria-hidden="true">04</span>
-              <h4 class="feature-title">Usuarios y cajeros</h4>
-              <p>Roles separados para administración y caja, para que cada persona acceda a lo que necesita.</p>
+              <h4 class="feature-title">Permisos por rol</h4>
+              <p>Cajero, administrador y super administrador, cada uno con acceso solo a lo que necesita.</p>
             </li>
             <li class="feature reveal">
               <span class="feature-num" aria-hidden="true">05</span>
@@ -311,8 +330,8 @@
             </li>
             <li class="offline-step reveal">
               <span class="step-num" aria-hidden="true">02</span>
-              <h4>Guardado local</h4>
-              <p>Cada venta tomada sin internet queda registrada en el dispositivo como operación pendiente. No se pierde ningún pedido.</p>
+              <h4>Cola local</h4>
+              <p>Cada venta tomada sin internet queda en una cola en el dispositivo (IndexedDB). No se pierde ningún pedido.</p>
             </li>
             <li class="offline-step reveal">
               <span class="step-num" aria-hidden="true">03</span>
@@ -324,6 +343,24 @@
       </div>
 
       <div class="container">
+        <div class="case-decisions">
+          <h3 class="section-sub reveal">Decisiones técnicas</h3>
+          <ol class="decision-list">
+            <li class="decision reveal">
+              <h4>Infraestructura propia</h4>
+              <p>Migré la aplicación desde Lovable a un servidor Linux propio: imagen Docker multi-etapa con servidor Node, Easypanel y Traefik con SSL, y entornos de prueba y producción separados.</p>
+            </li>
+            <li class="decision reveal">
+              <h4>Seguridad en la base de datos</h4>
+              <p>PostgreSQL en Supabase con Row Level Security por rol y por food truck, para que cada cliente acceda solo a sus datos.</p>
+            </li>
+            <li class="decision reveal">
+              <h4>Proceso de entrega</h4>
+              <p>Relevo necesidades con el cliente, priorizo sobre el flujo de caja real, documento cada cambio y verifico con checklists de pruebas antes de pasar a producción.</p>
+            </li>
+          </ol>
+        </div>
+
         <div class="case-stack">
           <div class="case-stack-head reveal">
             <h3 class="section-sub">Stack de WallFood</h3>
@@ -332,19 +369,23 @@
           <dl class="stack-table">
             <div class="stack-row reveal">
               <dt>Aplicación</dt>
-              <dd><span class="chip">React 19</span><span class="chip">TypeScript</span><span class="chip">TanStack Start</span></dd>
+              <dd><span class="chip">React 19</span><span class="chip">TypeScript</span><span class="chip">TanStack Start</span><span class="chip">Tailwind CSS</span><span class="chip">Radix UI</span><span class="chip">React Query</span><span class="chip">Zod</span></dd>
             </div>
             <div class="stack-row reveal">
               <dt>Datos y seguridad</dt>
-              <dd><span class="chip">Supabase</span><span class="chip">PostgreSQL</span><span class="chip">Row Level Security</span></dd>
+              <dd><span class="chip">Supabase Auth</span><span class="chip">PostgreSQL</span><span class="chip">Row Level Security</span><span class="chip">Migraciones SQL</span></dd>
             </div>
             <div class="stack-row reveal">
-              <dt>Modo offline</dt>
-              <dd><span class="chip">Service Worker</span><span class="chip">IndexedDB</span></dd>
+              <dt>Modo offline (PWA)</dt>
+              <dd><span class="chip">Service Worker</span><span class="chip">IndexedDB (Dexie)</span></dd>
             </div>
             <div class="stack-row reveal">
               <dt>Infraestructura</dt>
-              <dd><span class="chip">Docker</span></dd>
+              <dd><span class="chip">Docker</span><span class="chip">Node</span><span class="chip">Linux (Ubuntu)</span><span class="chip">Easypanel</span><span class="chip">Traefik</span></dd>
+            </div>
+            <div class="stack-row reveal">
+              <dt>Integraciones</dt>
+              <dd><span class="chip">Cloudinary</span><span class="chip">Resend</span><span class="chip">Agente de impresión en Python</span></dd>
             </div>
           </dl>
         </div>
@@ -359,46 +400,84 @@
       </div>
     </section>
 
+    <!-- ═══════════════════════════ NEWCARPANEL ═══════════════════════════ -->
+    <section id="newcarpanel" class="wip" aria-labelledby="newcarpanel-title">
+      <div class="container">
+        <div class="wip-card">
+          <div class="wip-body">
+            <p class="eyebrow reveal"><span class="eyebrow-num">02</span> Segundo proyecto</p>
+            <div class="wip-title-row reveal">
+              <h2 id="newcarpanel-title" class="wip-title">NewCarPanel</h2>
+              <span class="badge-dev"><span class="tag-dot tag-dot-dev" aria-hidden="true"></span>En desarrollo</span>
+            </div>
+            <p class="wip-kicker reveal">SaaS para servicios automotores.</p>
+            <p class="wip-text reveal">
+              Un sistema para centralizar la gestión de vehículos, los servicios realizados y el historial
+              de cada unidad. Lo estoy desarrollando en colaboración con otro desarrollador, trabajando
+              en equipo con Git.
+            </p>
+
+            <dl class="wip-meta reveal">
+              <div><dt>Orientado a</dt><dd>Talleres, lubricentros, concesionarias y flotas</dd></div>
+              <div><dt>Modalidad</dt><dd>Proyecto colaborativo · Git</dd></div>
+              <div><dt>Estado</dt><dd>En construcción, sin demo pública</dd></div>
+            </dl>
+          </div>
+
+          <div class="wip-visual reveal" aria-hidden="true">
+            <div class="wip-blueprint">
+              <span class="bp-label bp-label-top">newcarpanel / en desarrollo</span>
+              <div class="bp-modules">
+                <span>Vehículos</span>
+                <span>Servicios</span>
+                <span>Historial</span>
+              </div>
+              <span class="bp-label bp-label-bottom">módulos previstos · no es una captura del producto</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ═══════════════════════════ SOBRE MÍ ═══════════════════════════ -->
     <section id="sobre" class="section about" aria-labelledby="sobre-title">
       <div class="container about-grid">
         <div class="about-head">
-          <p class="eyebrow reveal"><span class="eyebrow-num">02</span> Sobre mí</p>
+          <p class="eyebrow reveal"><span class="eyebrow-num">03</span> Sobre mí</p>
           <h2 id="sobre-title" class="section-title reveal">Primero entender el problema.<br /><span class="muted">Después, el código.</span></h2>
         </div>
 
         <div class="about-body">
           <p class="about-lead reveal">
-            Soy Walter Benítez, Analista de Sistemas egresado de la UNNOBA. Me interesa el software
-            que se usa de verdad: analizo cómo trabaja la gente, detecto dónde está la fricción y
-            construyo herramientas que la resuelven.
+            Soy Walter Benítez, Analista de Sistemas egresado de la UNNOBA en febrero de 2026.
+            Me interesa el software que se usa de verdad: relevo cómo trabaja la gente, detecto dónde
+            está la fricción y construyo herramientas que la resuelven.
           </p>
 
           <ol class="facts">
             <li class="fact reveal">
               <span class="fact-num" aria-hidden="true">01</span>
-              <p><strong>Formación en análisis de sistemas.</strong> Programación, bases de datos, redes y seguridad informática, con foco en relevar requerimientos y modelar soluciones.</p>
+              <p><strong>Un producto en producción.</strong> Con WallFood llevo un SaaS de punta a punta: modelo de datos, lógica de negocio, interfaz, modo offline, servidor y despliegue.</p>
             </li>
             <li class="fact reveal">
               <span class="fact-num" aria-hidden="true">02</span>
-              <p><strong>Un producto SaaS construido de punta a punta.</strong> Con WallFood diseñé el modelo de datos, la lógica de negocio, la interfaz y el modo offline de un sistema real.</p>
+              <p><strong>Trabajo en equipo.</strong> Desarrollo NewCarPanel en colaboración con otro desarrollador, coordinando el trabajo con Git.</p>
             </li>
             <li class="fact reveal">
               <span class="fact-num" aria-hidden="true">03</span>
-              <p><strong>Tecnologías actuales.</strong> Trabajo con React, TypeScript, bases de datos relacionales y contenedores, y aprendo lo que cada problema necesita.</p>
+              <p><strong>IA como herramienta, no como atajo.</strong> Uso Claude Code y ChatGPT como asistentes; reviso, pruebo y me hago responsable del código y de las decisiones técnicas.</p>
             </li>
             <li class="fact reveal">
               <span class="fact-num" aria-hidden="true">04</span>
-              <p><strong>Ganas de sumar a un equipo.</strong> Busco un entorno profesional donde aportar compromiso y criterio, seguir aprendiendo y crecer en el ámbito IT.</p>
+              <p><strong>Lo que busco.</strong> Sumarme a un equipo de desarrollo, análisis o implementación de sistemas. Prioridad remoto; disponibilidad para CABA, GBA y Rosario.</p>
             </li>
           </ol>
 
           <div class="about-actions reveal">
-            <a href="docs/C-V-WalterBenitez.pdf" class="btn btn-ghost" download>
+            <a href="docs/C-V-WalterBenitez.pdf?v=2026-10" class="btn btn-ghost" download="Walter-Benitez-CV.pdf">
               Descargar CV (PDF)
               <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>
             </a>
-            <p class="about-aside">Fuera del código: música, viajes, natación y fotografía.</p>
           </div>
         </div>
       </div>
@@ -409,7 +488,7 @@
       <div class="container">
         <div class="skills-head">
           <div>
-            <p class="eyebrow reveal"><span class="eyebrow-num">03</span> Tecnologías</p>
+            <p class="eyebrow reveal"><span class="eyebrow-num">04</span> Tecnologías</p>
             <h2 id="stack-title" class="section-title reveal">Con qué trabajo</h2>
           </div>
           <p class="skills-legend reveal"><span class="legend-dot" aria-hidden="true"></span> Usada en WallFood</p>
@@ -417,79 +496,98 @@
 
         <div class="skills-grid">
           <div class="skill-group reveal">
-            <h3 class="skill-group-title">Lenguajes</h3>
+            <h3 class="skill-group-title">Desarrollo</h3>
             <ul>
               <li class="is-wf">TypeScript<span class="sr-only"> (usada en WallFood)</span></li>
-              <li>JavaScript</li>
-              <li>SQL</li>
-              <li>Python</li>
-              <li>Java</li>
-              <li>HTML y CSS</li>
-            </ul>
-          </div>
-          <div class="skill-group reveal">
-            <h3 class="skill-group-title">Frontend</h3>
-            <ul>
               <li class="is-wf">React<span class="sr-only"> (usada en WallFood)</span></li>
-              <li class="is-wf">TanStack Start<span class="sr-only"> (usada en WallFood)</span></li>
-              <li class="is-wf">Service Worker<span class="sr-only"> (usada en WallFood)</span></li>
-              <li class="is-wf">IndexedDB<span class="sr-only"> (usada en WallFood)</span></li>
-              <li>Diseño responsive</li>
+              <li class="is-wf">Node.js<span class="sr-only"> (usada en WallFood)</span></li>
+              <li class="is-wf">Python<span class="sr-only"> (usada en WallFood)</span></li>
+              <li>JavaScript</li>
+              <li>Express</li>
+              <li>APIs REST</li>
             </ul>
           </div>
           <div class="skill-group reveal">
-            <h3 class="skill-group-title">Backend y datos</h3>
+            <h3 class="skill-group-title">Datos</h3>
             <ul>
               <li class="is-wf">PostgreSQL<span class="sr-only"> (usada en WallFood)</span></li>
               <li class="is-wf">Supabase<span class="sr-only"> (usada en WallFood)</span></li>
               <li class="is-wf">Row Level Security<span class="sr-only"> (usada en WallFood)</span></li>
-              <li>Node.js y Express</li>
-              <li>MySQL</li>
+              <li class="is-wf">SQL y migraciones<span class="sr-only"> (usada en WallFood)</span></li>
             </ul>
           </div>
           <div class="skill-group reveal">
-            <h3 class="skill-group-title">Infraestructura y herramientas</h3>
+            <h3 class="skill-group-title">Infraestructura</h3>
             <ul>
               <li class="is-wf">Docker<span class="sr-only"> (usada en WallFood)</span></li>
+              <li class="is-wf">Linux (Ubuntu)<span class="sr-only"> (usada en WallFood)</span></li>
+              <li class="is-wf">Easypanel<span class="sr-only"> (usada en WallFood)</span></li>
+              <li class="is-wf">Traefik<span class="sr-only"> (usada en WallFood)</span></li>
               <li>Git y GitHub</li>
-              <li>Linux</li>
-              <li>AWS Lightsail</li>
+            </ul>
+          </div>
+          <div class="skill-group reveal">
+            <h3 class="skill-group-title">IA aplicada al desarrollo</h3>
+            <ul>
+              <li>Claude Code</li>
+              <li>ChatGPT</li>
+            </ul>
+            <h3 class="skill-group-title skill-group-title-gap">Idiomas</h3>
+            <ul>
+              <li>Español nativo</li>
+              <li>Inglés B1</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ═══════════════════════════ TRAYECTORIA ═══════════════════════════ -->
-    <section id="trayectoria" class="section journey" aria-labelledby="trayectoria-title">
+    <!-- ═══════════════════════════ RECORRIDO ═══════════════════════════ -->
+    <section id="recorrido" class="section journey" aria-labelledby="recorrido-title">
       <div class="container">
-        <p class="eyebrow reveal"><span class="eyebrow-num">04</span> Trayectoria</p>
-        <h2 id="trayectoria-title" class="section-title reveal">Recorrido</h2>
+        <p class="eyebrow reveal"><span class="eyebrow-num">05</span> Recorrido</p>
+        <h2 id="recorrido-title" class="section-title reveal">Formación y proyectos</h2>
 
         <ol class="timeline">
           <li class="timeline-row reveal">
-            <p class="timeline-date">2026</p>
+            <p class="timeline-date">2026 — actualidad</p>
             <div class="timeline-main">
               <h3>WallFood</h3>
-              <p class="timeline-org">Producto propio · Diseño y desarrollo</p>
+              <p class="timeline-org">Producto propio · En producción</p>
             </div>
-            <p class="timeline-desc">Punto de venta SaaS para food trucks con gestión de productos, combos, stock, reportes, usuarios y modo offline con sincronización.</p>
+            <p class="timeline-desc">SaaS de punto de venta para food trucks: ventas, stock, combos, reportes, suscripciones, permisos por rol y modo offline con sincronización.</p>
           </li>
           <li class="timeline-row reveal">
-            <p class="timeline-date">2019 — 2026</p>
+            <p class="timeline-date timeline-date-dev">En desarrollo</p>
+            <div class="timeline-main">
+              <h3>NewCarPanel</h3>
+              <p class="timeline-org">Proyecto colaborativo</p>
+            </div>
+            <p class="timeline-desc">SaaS para talleres, lubricentros, concesionarias y flotas: gestión de vehículos, servicios e historial.</p>
+          </li>
+          <li class="timeline-row reveal">
+            <p class="timeline-date">Oct. 2026</p>
+            <div class="timeline-main">
+              <h3>Inteligencia Artificial Generativa</h3>
+              <p class="timeline-org">XXX Escuela Internacional de Informática CACIC 2026 · UTN-FRCU</p>
+            </div>
+            <p class="timeline-desc">LLM, prompts, RAG, modelos open source y agentes. Constancia de cursado.</p>
+          </li>
+          <li class="timeline-row reveal">
+            <p class="timeline-date">Feb. 2026</p>
             <div class="timeline-main">
               <h3>Analista de Sistemas</h3>
               <p class="timeline-org">Universidad Nacional del Noroeste de la Provincia de Buenos Aires (UNNOBA)</p>
             </div>
-            <p class="timeline-desc">Programación, bases de datos, análisis y diseño de sistemas, redes y seguridad informática, con énfasis en la resolución de problemas y el trabajo en equipo.</p>
+            <p class="timeline-desc">Título obtenido. Programación, bases de datos, análisis y diseño de sistemas, redes y seguridad informática.</p>
           </li>
           <li class="timeline-row reveal">
-            <p class="timeline-date">2010 — 2013</p>
+            <p class="timeline-date">Oct. 2025</p>
             <div class="timeline-main">
-              <h3>Operario de producción</h3>
-              <p class="timeline-org">Liliana S.R.L.</p>
+              <h3>Sistemas de Ciberdefensa con IA</h3>
+              <p class="timeline-org">CACIC 2025 · Universidad Nacional de Río Negro</p>
             </div>
-            <p class="timeline-desc">Armado en una línea de producción de electrodomésticos: trabajo en equipo, procesos y resolución de problemas en un entorno exigente.</p>
+            <p class="timeline-desc">Curso de 15 horas, aprobado.</p>
           </li>
         </ol>
       </div>
@@ -499,7 +597,7 @@
     <section id="contacto" class="contact" aria-labelledby="contacto-title">
       <div class="contact-glow" aria-hidden="true"></div>
       <div class="container">
-        <p class="eyebrow reveal"><span class="eyebrow-num">05</span> Contacto</p>
+        <p class="eyebrow reveal"><span class="eyebrow-num">06</span> Contacto</p>
         <h2 id="contacto-title" class="contact-title reveal">Hablemos.</h2>
         <p class="contact-lead reveal">
           ¿Buscás sumar a alguien a tu equipo o tenés un proyecto en mente? Escribime y te respondo.
@@ -524,7 +622,7 @@
             </a>
           </li>
           <li>
-            <a href="docs/C-V-WalterBenitez.pdf" download>
+            <a href="docs/C-V-WalterBenitez.pdf?v=2026-10" download="Walter-Benitez-CV.pdf">
               <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg> Currículum (PDF)
               <svg class="icon icon-end" aria-hidden="true"><use href="#i-arrow-down"/></svg>
             </a>
@@ -538,7 +636,7 @@
         </ul>
 
         <div class="contact-meta reveal">
-          <p>Pergamino, Buenos Aires, Argentina</p>
+          <p>Pergamino, Buenos Aires, Argentina · Prioridad remoto</p>
           <p>Hora local <time id="local-time">—</time></p>
         </div>
       </div>
